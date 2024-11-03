@@ -3,6 +3,9 @@ import "../../styles/Hero.scss";
 import { Button } from "react-bootstrap";
 
 import facebook from "../../assets/icons/facebook.svg";
+import twitter from "../../assets/icons/twitter.svg";
+import instagram from "../../assets/icons/instagram.svg";
+import linkedin from "../../assets/icons/linkedin.svg";
 import heroImage from "../../assets/images/hero.png";
 import { BodyOne, Title } from "../common/CustomeComponents";
 
@@ -23,9 +26,9 @@ export const Hero = () => {
 
         <div className="social-media">
           <img src={facebook} className="social_icon" alt="FB"/>
-          <img src={facebook} className="social_icon" alt="FB"/>
-          <img src={facebook} className="social_icon" alt="FB" />
-          <img src={facebook} className="social_icon" alt="FB" />
+          <img src={twitter} className="social_icon" alt="FB"/>
+          <img src={instagram} className="social_icon" alt="FB" />
+          <img src={linkedin} className="social_icon" alt="FB" />
         </div>
 
         <Button>Download Resume</Button>
