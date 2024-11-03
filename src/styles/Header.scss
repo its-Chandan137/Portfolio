@@ -1,0 +1,38 @@
+@import '../color.scss';
+
+.header{
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2rem 9%;
+    width: 100%;
+    background-color: $bg-color;
+}
+
+.navbar{
+    a{
+        font-size: 1.7rem;
+        color: $text-color;
+        margin-left: 4rem;
+        transition: 0.3s ease-in-out;
+
+        &:hover{
+            color: $main-color;
+        }
+
+        &.active{
+            color: $main-color;
+        }
+    }
+}
+
+.logo{
+    font-size: 2.5rem;
+    color: $text-color;
+    font-weight: 600;
+    cursor: default;
+}
