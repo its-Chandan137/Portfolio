@@ -26,9 +26,29 @@ body {
 }
 .section{
   min-height: 100vh;
-  padding: 10rem 9% 2rem;
+  padding: 2rem 9% 2rem;
 }
 /* BREAKPOINTS */
+
+// Buttons //
+
+.btn-primary{
+  display: inline-block;
+  padding: 1rem 2.8rem;
+  background-color: $main-color;
+  box-shadow: 0 0 1rem $main-color;
+  border-radius: 4rem;
+  font-size: 1.6rem;
+  color: $second-bg-color;
+  letter-spacing: .1rem;
+  font-weight: 600;
+
+  transition: 0.5s ease;
+
+    &:hover{
+      box-shadow: none;
+    }
+}
 
 
 // TEXT FONTS //

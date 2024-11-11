@@ -21,8 +21,16 @@
     text-align: start !important;
 }
 
+.Live_span_container{
+    margin-bottom: 2rem;
+
+    span{
+        color: $main-color;
+    }
+}
+
 .hero_image_box{
-    img{
+    .hero_image{
         width: 90%;
         // height: 50%;
     }
@@ -33,22 +41,25 @@
     justify-content: start;
     gap: 10px;
 
-    img{
-        display: flex;
+    a{
+        display: inline-flex;
         justify-content: center;
         align-items: center;
         width: 4rem;
         height: 4rem;
-        background: $main-color;
+        background: transparent !important;
         border: .2rem solid $main-color;
         border-radius: 50%;
         font-size: 2rem;
+        color: $main-color;
         margin: 3rem 1.5rem 3rem 0;
-        transition: .3s ease-in-out;
+        transition: .5s ease;
 
         &:hover{
-            background: $main-color-faded;
-            border: .2rem solid $main-color-faded;
+            background: $main-color !important;
+            color: $second-bg-color;
+            box-shadow: 0 0 1rem $main-color;
         }
+
     }
 }
