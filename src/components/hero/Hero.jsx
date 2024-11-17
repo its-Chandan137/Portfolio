@@ -18,7 +18,7 @@ export const Hero = () => {
         <Title level={3}>Hello, It's Me</Title>
         <Title level={1}>Little Demon</Title>
         <Title level={3} className={"Live_span_container"}>
-          And I'm a <span>Frontend Developer</span>
+          And I'm a <span></span>
         </Title>
         <BodyOne>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus
