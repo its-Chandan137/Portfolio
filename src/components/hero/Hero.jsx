@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Hero.scss";
 import { Button } from "react-bootstrap";
 
@@ -12,7 +12,14 @@ import { BodyOne, Title } from "../common/CustomeComponents";
 import { Design } from "../common/Particle/Design";
 
 
+
+
 export const Hero = () => {
+
+
+
+
+
   return (
     <div className="hero_section section" id="hero">
         <Design/>
