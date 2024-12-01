@@ -9,11 +9,13 @@ import { Button } from "react-bootstrap";
 
 import heroImage from "../../assets/images/Chandan image fill.png";
 import { BodyOne, Title } from "../common/CustomeComponents";
+import { Design } from "../common/Particle/Design";
 
 
 export const Hero = () => {
   return (
     <div className="hero_section section" id="hero">
+        <Design/>
       <div className="hero-content section">
         <Title level={3}>Hello, It's Me</Title>
         <Title level={1}>Little Demon</Title>
