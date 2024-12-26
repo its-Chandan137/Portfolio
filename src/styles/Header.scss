@@ -1,17 +1,18 @@
 @import '../color.scss';
 
 .header{
-    z-index: 100;
+    z-index: 900;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    padding: 2rem 9%;
+    padding: 2rem 9.5%;
     width: 100%;
     background-color: $bg-color;
 }
+
 
 .navbar{
     a{

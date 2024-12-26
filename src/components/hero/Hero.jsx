@@ -1,20 +1,33 @@
-import React from "react";
-import "../../styles/Hero.scss";
+import React, { useEffect } from "react";
+import "./Hero.scss";
 import { Button } from "react-bootstrap";
 
-import facebook from "../../assets/icons/facebook.svg";
-import heroImage from "../../assets/images/hero.png";
+// import facebook from "../../assets/icons/facebook.svg";
+// import twitter from "../../assets/icons/twitter.svg";
+// import instagram from "../../assets/icons/instagram.svg";
+// import linkedin from "../../assets/icons/linkedin.svg";
+
+import heroImage from "../../assets/images/Chandan image fill.png";
 import { BodyOne, Title } from "../common/CustomeComponents";
+import { Design } from "../common/Particle/Design";
+
+
 
 
 export const Hero = () => {
+
+
+
+
+
   return (
-    <div className="hero_section">
+    <div className="hero_section section" id="hero">
+        <Design/>
       <div className="hero-content section">
         <Title level={3}>Hello, It's Me</Title>
-        <Title level={6}>Little Demon</Title>
-        <Title level={3}>
-          And I'm a <span>Frontend Devloper</span>
+        <Title level={1}>Little Demon</Title>
+        <Title level={3} className={"Live_span_container"}>
+          And I'm a <span></span>
         </Title>
         <BodyOne>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus
@@ -22,13 +35,25 @@ export const Hero = () => {
         </BodyOne>
 
         <div className="social-media">
-          <img src={facebook} className="social_icon" alt="FB"/>
-          <img src={facebook} className="social_icon" alt="FB"/>
-          <img src={facebook} className="social_icon" alt="FB" />
-          <img src={facebook} className="social_icon" alt="FB" />
+
+          <a href="#" className="social_icon">
+            <i class='bx bxl-facebook'></i>
+          </a>
+          <a href="#" className="social_icon">
+            <i class='bx bxl-instagram-alt' ></i>
+          </a>
+          <a href="#" className="social_icon">
+            <i class='bx bxl-twitter' ></i>
+          </a>
+          <a href="#" className="social_icon">
+            <i class='bx bxl-linkedin' ></i>
+          </a>
+
         </div>
 
-        <Button>Download Resume</Button>
+        <div>
+          <Button>Download Resume</Button>
+        </div>
 
       </div>
       <div className="hero_image_box">
