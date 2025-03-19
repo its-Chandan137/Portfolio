@@ -1,20 +1,29 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Header } from '../router';
 import { Hero } from '../components/hero/Hero';
 import { About } from '../components/About/About';
+import  Toaster from '../components/common/Toaster/Toaster';
 // import { Hero } from '../router'
 
 export const Home = () => {
+  const [toast, setToast] = useState(null);
+
   useEffect(() => {
     window.scrollTo(0,0);
-},[]);
+  },[]);
 
-// Handle Copy /////////////////////
-const handleCopy = (event) => {
-  const selected = window.getSelection().toString();
-  event.clipboardData.setData("text/plain", "Sorry! text can't be copied.");
-  event.preventDefault();
-};
+
+  const showToast = (type, message) => {
+    setToast({ type, message });
+    setTimeout(() => setToast(null), 3000);
+  }
+
+  // Handle Copy /////////////////////
+  const handleCopy = (event) => {
+    const selected = window.getSelection().toString();
+    event.clipboardData.setData("text/plain", "Sorry! text can't be copied.");
+    event.preventDefault();
+  };
 ////////////////////////////////////
 
 // HAndle Inspect //////////////////
@@ -31,7 +40,8 @@ const handleKeyDown = (event) => {
     (event.ctrlKey && event.key === "U") // Ctrl+U
   ) {
     event.preventDefault();
-    alert("Inspecting is disabled!");
+    // alert("Inspecting is disabled!");
+    showToast("warning", "Inspecting is disabled!");
   }
 };
 /////////////////////////////
@@ -39,13 +49,20 @@ const handleKeyDown = (event) => {
   return (
     <div className='text-blue-400 relative' 
       onCopy={handleCopy} //No Copy
-      onContextMenu={handleContextMenu} // No right click
+      // onContextMenu={handleContextMenu} // No right click
       onKeyDown={handleKeyDown} // No right click
       tabIndex={0} // No right click
       style={{
         outline: "none", // No right click
     }}
     >
+      {toast && (
+        <Toaster
+          type={toast.type}
+          message={toast.message}
+          onClose={() => setToast(null)}
+        />
+      )}
       <Header/>
       <Hero/>
       <About/>
