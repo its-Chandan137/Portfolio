@@ -3,9 +3,9 @@ import '../../styles/Header.scss'
 
 export const Header = () => {
   return (
-    <div>
+    <div className='container'>
         <div className="header">
-            <a href="#" className="logo">Little Demon</a>
+            <a href="#" className="logo">Chandan Swarnakar</a>
 
             <nav className="navbar">
                 <a href="#" className='active'>Home</a>

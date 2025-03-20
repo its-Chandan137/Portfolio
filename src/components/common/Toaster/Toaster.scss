@@ -1,0 +1,12 @@
+.Toaster{
+    position: fixed;
+    top: 80px;
+    right: 10px;
+    z-index: 999;
+    min-width: fit-content;
+    
+    .toaster_message{
+        font-size: 14px;
+        padding-right: 10px;
+    }
+}

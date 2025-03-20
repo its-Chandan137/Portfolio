@@ -7,15 +7,20 @@
     gap: 5rem;
     background: $second-bg-color;
 
-}
+    width: 100%;
+
+
 
 .about_img{
     z-index: 200;
 
 }
 
-.about_img img{
-    min-width: 30vw;
+.about_img {
+    // width: 550px !important;
+    img{
+        width: 100%;
+    }
 }
 
 .about_content{
@@ -39,4 +44,5 @@
         margin: 2rem 0 3rem;
         line-height: unset;
     }
+}
 }

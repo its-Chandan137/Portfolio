@@ -4,7 +4,121 @@ $text-color: #fff;
 $main-color: #0ef;
 $main-color-faded: #00eeff81;
 
+
+$colors: (
+    // Primary Blue
+    blue-10: #e8e8f2,
+    blue-20: #d1d1e6,
+    blue-40: #a1a3cf,
+    blue-60: #7477b6,
+    blue-80: #4649a0,
+    blue-100: #181c89,
+    blue-120: #13166e,
+    blue-140: #0e1152,
+
+    // Red
+    red-10: #f9e6e6,
+    red-20: #f4cdcd,
+    red-40: #eb9c9a,
+    red-60: #e46e6b,
+    red-80: #dd463d,
+    red-100: #da2f1f,
+    red-120: #ae2518,
+    red-140: #821c12,
+
+    // Yellow
+    yellow-10: #fdf7e6,
+    yellow-20: #fdf0cf,
+    yellow-40: #f9e2a1,
+    yellow-60: #f7d677,
+    yellow-80: #f6c854,
+    yellow-100: #f4ba3f,
+    yellow-120: #c39432,
+    yellow-140: #926f25,
+
+    // Green
+    green-10: #e8f6ed,
+    green-20: #d3eddd,
+    green-40: #a8ddbc,
+    green-60: #80cd9c,
+    green-80: #62bd7c,
+    green-100: #4fae5d,
+    green-120: #3f8b4a,
+    green-140: #2f6837,
+
+    // Grey
+    box: #f3f3f3,
+    box-shadow: #eeeeee,
+    seperator: #e4e4e4,
+    line: #dbdbdb,
+    neutral-light: #dbdbdb,
+    neutral-medium: #afafaf,
+    neutral-dark:#565656,
+    black: #000,
+    white: #FFF,
+
+    // Text
+    primary-text: #1A1A1A,
+    secondary-text: #575757,
+
+    // Orange
+    orange-10: #fdf0e6,
+    orange-20: #f9e4cf,
+    orange-40: #f6c89e,
+    orange-60: #f2ae72,
+    orange-80: #ef9349,
+    orange-100: #ed792f,
+    orange-120: #bd6025,
+    orange-140: #8e481c,
+
+    // Sky Blue
+    sky-blue-10: #e6effb,
+    sky-blue-20: #cfddf6,
+    sky-blue-40: #a1bdef,
+    sky-blue-60: #749ce6,
+    sky-blue-80: #497cdf,
+    sky-blue-100: #265dd8,
+    sky-blue-120: #1e4aac,
+    sky-blue-140: #163781,
+
+    bs-emphasis-color: '#0E1156',
+    
+    
+    bg-color: #1f242d,
+    second-bg-color: #323946,
+    text-color: #fff,
+    main-color: #0ef,
+    main-color-faded: #00eeff81,
+);
+
+
 :root {
   background-color: $bg-color;
   color: $text-color;
+
+  @each $name, $value in $colors {
+    --#{$name}: #{$value}; // e.g., --blue-10: #e8e8f2;
+  }
+}
+
+// Loop for creating colors with variable - class names
+@each $name, $value in $colors {
+
+  // For Background Color
+  .bg-#{$name} {
+      // .bg-primary-text
+      background-color: #{$value} !important;
+  }
+
+  // For Text Color
+  .color-#{$name} {
+      // .text-primary-text
+      color: #{$value} !important;
+  }
+
+  // For Border Color
+  .border-#{$name} {
+      border-color: #{$value}!important;
+  }
+
 }

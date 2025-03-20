@@ -5,7 +5,7 @@ const Title = ({ level, children, className }) => {
   const Heading = `h${level}`;
   const classes = `font-[700] ${
     level === 1
-      ? "text-[80px] font-[700] text-primary"
+      ? "text-[46px] font-[700] text-primary"
       : level === 2
       ? "text-[40px] font-[700] text-primary"
       : level === 3
