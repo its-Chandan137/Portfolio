@@ -1,12 +1,47 @@
-.Toaster{
+@import '../../../color.scss';
+
+.Toaster {
     position: fixed;
     top: 80px;
     right: 10px;
     z-index: 999;
     min-width: fit-content;
-    
-    .toaster_message{
+    background-color: black !important;
+    color: white;
+    opacity: 1;
+    transform: translateX(100%);
+    animation: slide-in 0.3s ease-out forwards;
+
+    .toaster_message {
         font-size: 14px;
         padding-right: 10px;
+    }
+}
+
+/* Slide in animation */
+@keyframes slide-in {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Slide out animation */
+.slide-out {
+    animation: slide-out 0.3s ease-in forwards;
+}
+
+@keyframes slide-out {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
     }
 }

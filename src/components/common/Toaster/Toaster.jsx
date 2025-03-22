@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './Toaster.scss';
 
-const Toaster = ({ type = "success", message, onClose }) => {
+const Toaster = ({ type = "success", message, onClose, duration = 3000 }) => {
+  const [closing, setClosing] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setClosing(true);
+      setTimeout(onClose, 300); // Matches slide-out animation duration
+    }, duration);
+
+    return () => clearTimeout(timer);
+  }, [duration, onClose]);
+
   const toastStyles = {
     success: {
       iconBg: "bg-green-100 dark:bg-green-800",
@@ -27,12 +38,12 @@ const Toaster = ({ type = "success", message, onClose }) => {
 
   return (
     <div
-      className="Toaster flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
+      className={`Toaster flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 rounded-lg shadow dark:text-gray-400 dark:bg-gray-800 bg-second-bg-color ${
+        closing ? "slide-out" : ""
+      }`}
       role="alert"
     >
-      <div
-        className={`inline-flex items-center justify-center flex-shrink-0 w-16 h-16 ${iconText} ${iconBg} rounded-lg`}
-      >
+      <div className={`inline-flex items-center justify-center flex-shrink-0 w-16 h-16 ${iconText} ${iconBg} rounded-lg`}>
         <svg
           className="w-10 h-10"
           aria-hidden="true"
@@ -47,8 +58,11 @@ const Toaster = ({ type = "success", message, onClose }) => {
       <div className="toaster_message ms-3 font-normal">{message}</div>
       <button
         type="button"
-        className="ms-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
-        onClick={onClose}
+        className="ms-auto -mx-1.5 -my-1.5 text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
+        onClick={() => {
+          setClosing(true);
+          setTimeout(onClose, 300);
+        }}
         aria-label="Close"
       >
         <span className="sr-only">Close</span>
