@@ -54,16 +54,16 @@ export const Hero = () => {
           <div className="social-media">
 
             <a href="#" className="social_icon">
-              <i class='bx bxl-facebook'></i>
+              <i className='bx bxl-facebook'></i>
             </a>
             <a href="#" className="social_icon">
-              <i class='bx bxl-instagram-alt' ></i>
+              <i className='bx bxl-instagram-alt' ></i>
             </a>
             <a href="#" className="social_icon">
-              <i class='bx bxl-twitter' ></i>
+              <i className='bx bxl-twitter' ></i>
             </a>
             <a href="#" className="social_icon">
-              <i class='bx bxl-linkedin' ></i>
+              <i className='bx bxl-linkedin' ></i>
             </a>
           </div>
 
