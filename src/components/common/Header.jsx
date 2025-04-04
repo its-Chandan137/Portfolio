@@ -10,7 +10,7 @@ export const Header = () => {
             <nav className="navbar">
                 <a href="#" className='active'>Home</a>
                 <a href="#about">About</a>
-                <a href="#">Services</a>
+                <a href="#">Projects</a>
                 <a href="#">Contact</a>
             </nav>
 
