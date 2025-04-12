@@ -35,6 +35,13 @@ body {
   margin-right: auto !important;
   position: relative !important;
 }
+
+.main-content {
+  min-height: calc(100vh - 200px); // Adjust based on header/footer heights
+  background: #1a2333; // Matches your theme
+  padding: 20px;
+  margin-top: 78px;
+}
 /* BREAKPOINTS */
 
 // Buttons //

@@ -1,20 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Hero.scss";
 import { Button } from "react-bootstrap";
 
-// import facebook from "../../assets/icons/facebook.svg";
-// import twitter from "../../assets/icons/twitter.svg";
-// import instagram from "../../assets/icons/instagram.svg";
-// import linkedin from "../../assets/icons/linkedin.svg";
-
 import heroImage from "../../assets/images/Me_png.png";
-import heroImage2 from "../../assets/images/Me_With_Background.png";
 import { BodyOne, Title } from "../common/CustomeComponents";
 import { Design } from "../common/Particle/Design";
 import Toaster from "../common/Toaster/Toaster";
-
-
-
 
 export const Hero = () => {
   const [toast, setToast] = useState(null);
@@ -22,30 +13,31 @@ export const Hero = () => {
   const showToast = (type, message) => {
     setToast({ type, message });
     setTimeout(() => setToast(null), 3000);
-  }
+  };
 
   const handleSocialClick = (platform) => {
-
     const socialLinks = {
       linkedin: "https://www.linkedin.com/",
       instagram: "https://www.instagram.com/",
       twitter: "https://twitter.com/",
-      // facebook: "https://www.facebook.com/",
     };
-    
+
     if (platform === "facebook") {
       console.log("Facebook !");
-    }
-    else{
+    } else {
       window.open(socialLinks[platform], "_blank");
     }
-  
-
-  
   };
 
+  const socialIcons = [
+    { platform: "linkedin", iconClass: "bx bxl-linkedin" },
+    { platform: "instagram", iconClass: "bx bxl-instagram-alt" },
+    { platform: "twitter", iconClass: "bx bxl-twitter" },
+    { platform: "facebook", iconClass: "bx bxl-facebook" },
+  ];
+
   return (
-    <section>
+    <section className="hero-page">
       <Design />
       <div className="container">
         <div className="hero_section section" id="hero">
@@ -73,50 +65,25 @@ export const Hero = () => {
             </BodyOne>
 
             <div className="social-media">
-              <a
-                href="#"
-                className="social_icon"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleSocialClick("linkedin");
-                }}
-              >
-                <i className="bx bxl-linkedin"></i>
-              </a>
-              <a
-                href="#"
-                className="social_icon"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleSocialClick("instagram");
-                }}
-              >
-                <i className="bx bxl-instagram-alt"></i>
-              </a>
-              <a
-                href="#"
-                className="social_icon"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleSocialClick("twitter");
-                }}
-              >
-                <i className="bx bxl-twitter"></i>
-              </a>
-              <a
-                href="#"
-                className="social_icon"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleSocialClick("facebook");
-                }}
-              >
-                <i className="bx bxl-facebook"></i>
-              </a>
+              {socialIcons.map(({ platform, iconClass }, index) => (
+                <a
+                  key={platform}
+                  href={index}
+                  className={`social_icon Index-${index}`}
+                  style={{ '--delay-index': index }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSocialClick(platform);
+                  }}
+                >
+                  <i className={iconClass}></i>
+                </a>
+              ))}
             </div>
 
             <div>
               <Button
+              className="download-resume-btn"
                 onClick={() => showToast("error", "Resume not uploaded yet.")}
               >
                 Download Resume

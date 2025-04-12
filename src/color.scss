@@ -3,8 +3,9 @@ $second-bg-color: #323946;
 $text-color: #fff;
 $main-color: #0ef;
 $main-color-faded: #00eeff81;
+$main-color-card: #181f2f;
 
-
+// Define a map of colors with various shades and utility colors
 $colors: (
     "blue-10": #e8e8f2,
     "blue-20": #d1d1e6,
@@ -42,13 +43,13 @@ $colors: (
     "main-color-faded": #00eeff81
 );
 
-
+// Set root-level CSS custom properties for global use
 :root {
-  background-color: $bg-color;
-  color: $text-color;
+  background-color: $bg-color; // Use $bg-color directly as the background for :root
+  color: $text-color; // Use $text-color directly as the text color for :root
 
   @each $name, $value in $colors {
-    --#{$name}: #{$value}; // e.g., --blue-10: #e8e8f2;
+    --#{$name}: #{$value}; // Define CSS custom properties (e.g., --blue-10: #e8e8f2) for use in any SCSS or CSS with var(--blue-10)
   }
 }
 
@@ -56,16 +57,16 @@ $colors: (
 @each $name, $value in $colors {
   // For Background Color
   .bg-#{"" + $name} {
-      background-color: #{$value} !important;
+      background-color: #{$value} !important; // Use .bg-blue-10 to set background to #e8e8f2, !important overrides other styles
   }
 
   // For Text Color
   .color-#{"" + $name} {
-      color: #{$value} !important;
+      color: #{$value} !important; // Use .color-blue-10 to set text color to #e8e8f2, !important overrides other styles
   }
 
   // For Border Color
   .border-#{"" + $name} {
-      border-color: #{$value} !important;
+      border-color: #{$value} !important; // Use .border-blue-10 to set border color to #e8e8f2, !important overrides other styles
   }
 }

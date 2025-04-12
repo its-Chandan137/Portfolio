@@ -1,0 +1,90 @@
+.footer {
+    background: #1a2333;
+    color: #a3bffa;
+    padding: 40px 0;
+    font-family: 'Arial', sans-serif;
+
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .footer-section h3 {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #2a3b5a;
+    padding-bottom: 5px;
+  }
+  
+  .footer-section p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #a3bffa;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul li a {
+    color: #a3bffa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-section ul li a:hover {
+    color: #f4a261;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social-links a {
+    color: #a3bffa;
+    font-size: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    color: #f4a261;
+  }
+  
+  /* Font Awesome icons (ensure you include Font Awesome in your project) */
+  .fab {
+    /* Ensure Font Awesome CSS is imported */
+  }
+  
+  /* Note: Add this to your main SCSS file or index.html to use Font Awesome */
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #2a3b5a;
+    margin-top: 20px;
+    color: #a3bffa;
+    font-size: 12px;
+  }
+}

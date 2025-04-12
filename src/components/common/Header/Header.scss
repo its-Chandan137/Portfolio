@@ -1,0 +1,81 @@
+@import '../../../color.scss';
+
+.header{
+    z-index: 900;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 2rem 6.5%;
+    width: 100%;
+    background-color: $bg-color;
+
+    .logo{
+        font-size: 2.5rem;
+        color: $text-color;
+        font-weight: 600;
+        cursor: default;
+    
+        animation: slideRight 1s ease forwards;
+    }
+
+
+.navbar{
+    .nav-item{
+        font-size: 1.7rem;
+        color: $text-color;
+        margin-left: 4rem;
+        transition: 0.3s ease-in-out;
+
+        &:hover{
+            color: $main-color;
+        }
+
+        &.active{
+            color: $main-color;
+        }
+
+        &.disabled {
+            color: var(--secondary-text);
+            cursor: not-allowed;
+            pointer-events: none;
+            text-decoration: line-through;
+        }
+    }
+}
+
+
+
+.nav-item {
+    display: inline-block;
+    opacity: 0;
+    animation: slideTop 0.5s ease forwards;
+    animation-delay: calc(0.2s * var(--delay-index)); // Use custom property
+  }
+
+}
+
+  
+  @keyframes slideRight {
+   0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+  }
+  
+  @keyframes slideTop {
+   0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+  }
