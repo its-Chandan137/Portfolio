@@ -1,0 +1,292 @@
+@import '../../color.scss';
+
+.project-page {
+    height: 100vh;
+
+    .each-card{
+      display: inline-block;
+      animation: slideLeftProductCard 0.8s ease;
+      // animation-delay: calc(0.2s * var(--delay-index-project)); 
+
+      @keyframes slideLeftProductCard {
+        0% {
+             opacity: 0;
+             transform: translateX(100px);
+         }
+         100% {
+             transform: translateX(0);
+             opacity: 1;
+         }
+       }
+    }
+
+    .card-container-background{
+      animation: opacityReveal 5s ease;
+
+      @keyframes opacityReveal {
+        0% {
+          opacity: 0;
+         }
+         100% {
+             opacity: 0.15;
+         }
+       }
+    }
+
+
+    .project-page-card-container{
+      position: relative;
+      display: flex;
+      gap: 10px;
+      height: 350px;
+      justify-content: center;
+      align-items: center;
+
+
+
+      .card-container-background{
+        position: absolute;
+        height: 100%;
+        width: 80%;
+        border: 2px solid $main-color-faded;
+        display: flex;
+        opacity: 0.15;
+
+
+        .card-section-background{
+          width: 20%;
+          height: 100%;
+
+          &:last-child{
+            border-right: none;
+          }
+        }
+        .card-section-background.wavy-box{
+          width: 30%;
+        }
+      }
+    }
+
+  
+  .card {
+    position: relative;
+    width: 340px;
+    background: #070c27;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    border: 1px solid $main-color-faded;
+    border-radius: 1px;
+    transition: 0.5s ease;
+    height: 250px;
+
+
+    &:hover {
+      height: 300px;
+
+      .animated-border-inner{
+        width: 40% !important;
+        background-color: $main-color !important;
+      }
+
+      .id{
+        color: $main-color;
+      }
+    }
+
+    .animated-border{
+      position: absolute;
+      bottom: 0;
+      z-index: 100;
+      height: 2px;
+      width: 100%;
+
+      display: flex;
+      justify-content: center;
+
+
+      .animated-border-inner{
+        width: 20%;
+        height: 2px;
+        background-color: $main-color-faded;
+        transition: 0.5s ease-in-out;
+      }
+    }
+  }
+
+  .outer-card-display{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 250px;
+    background: $main-color-card;
+    z-index: 20;
+    transition: 0.5s ease;
+
+    .logo{
+      transition: 0.1s ease;
+    }
+
+    .outer-card-texts{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: 0.5s ease;
+    }
+
+  }
+  
+  .card-content {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    height: 185px;
+    position: relative;
+    overflow: hidden;
+
+
+    .inner-card-display{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      background: $main-color-card;
+      z-index: 10;
+      transform: translateY(-100px);
+      transition: 0.5s ease;
+      // padding: 10px;
+
+      .project-image{
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+
+        background-position: top center;
+        background-size: contain;
+        background-repeat: no-repeat;        
+      }
+    }
+  }
+
+  .card{
+    &:hover{
+      .outer-card-display{
+        transform: translateY(180px);
+        .logo{
+          opacity: 0;
+        }
+        .outer-card-texts{
+          transform: translateY(-100px);
+        }
+      }
+      .inner-card-display{
+        transform: translateY(-2px);
+      }
+    }
+  }
+  
+  .logo {
+    height: 60px;
+    max-width: 160px;
+    margin-bottom: 10px;
+    object-fit: contain;
+    object-position: center;
+  }
+  
+  .project-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  h3 {
+    color: $text-color;
+    font-size: 18px;
+    margin: 5px 0;
+  }
+  
+  .id {
+    color: #f4a261;
+    font-size: 14px;
+  }
+  
+  .project-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 101;  
+
+  .popup-content {
+    background: #1a2333;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    height: 450px;
+    width: 800px;
+  }
+  
+  .popup-content img {
+    width: 300px;
+    height: auto;
+  }
+  
+  .popup-content h2 {
+    color: #fff;
+    margin: 10px 0;
+  }
+  
+  .popup-content p {
+    color: #f4a261;
+    margin-bottom: 10px;
+  }
+  
+  .popup-content .close {
+    border: none;
+    color: var(--secondary-text);
+    cursor: pointer;
+    position: absolute;
+    font-size: 14px;
+    transition: 0.3s ease;
+    font-style: italic;
+    font-weight: 600;
+    top: 12px;
+    right: 15px;
+
+    &:hover {
+      color: $text-color;
+    }
+  }
+}
+}
+
+
+//  wavy pattern //
+.wavy-box {
+  position: relative;
+  overflow: hidden;
+  border-right: 2px solid $main-color-faded;
+  border-left: 2px solid $main-color-faded;
+  width: 40%;
+}
+
+.wavy-pattern {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+

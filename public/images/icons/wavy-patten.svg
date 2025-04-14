@@ -1,0 +1,23 @@
+            <svg
+              className="wavy-pattern"
+              viewBox="0 0 300 350"
+              preserveAspectRatio="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {Array.from({ length: 80 }).map((_, i) => {
+                const startX = 10 + i * 10; // Shift starting X to spread across
+                const cp1X = startX - 190;
+                const cp2X = startX - 100;
+                const endX = startX - 200;
+                const strokeWidth = i % 4 === 0 ? 2.5 : 1.3; // 1 in 3 is thick
+                return (
+                  <path
+                    key={i}
+                    d={`M${startX} 0 C${cp1X} 100, ${cp2X} 1000, ${endX} 350`}
+                    stroke="red"
+                    strokeWidth={strokeWidth}
+                    fill="none"
+                  />
+                );
+              })}
+            </svg>
