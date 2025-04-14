@@ -3,6 +3,36 @@
 .project-page {
     height: 100vh;
 
+    .each-card{
+      display: inline-block;
+      animation: slideLeftProductCard 0.8s ease;
+      // animation-delay: calc(0.2s * var(--delay-index-project)); 
+
+      @keyframes slideLeftProductCard {
+        0% {
+             opacity: 0;
+             transform: translateX(100px);
+         }
+         100% {
+             transform: translateX(0);
+             opacity: 1;
+         }
+       }
+    }
+
+    .card-container-background{
+      animation: opacityReveal 5s ease;
+
+      @keyframes opacityReveal {
+        0% {
+          opacity: 0;
+         }
+         100% {
+             opacity: 0.15;
+         }
+       }
+    }
+
 
     .project-page-card-container{
       position: relative;
@@ -11,6 +41,8 @@
       height: 350px;
       justify-content: center;
       align-items: center;
+
+
 
       .card-container-background{
         position: absolute;
@@ -257,3 +289,4 @@
   width: 100%;
   height: 100%;
 }
+

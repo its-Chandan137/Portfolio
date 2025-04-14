@@ -7,13 +7,13 @@ export const Header = () => {
     { to: '/', label: 'Home' },
     { to: '/about', label: 'About', disabled: true }, // Disabled link
     { to: '/projects', label: 'Projects' },
-    { to: '/contact', label: 'Contact', disabled: true},
+    { to: '/contact', label: 'Contact'},
   ];
 
   return (
     <div className='container'>
       <div className="header">
-        <a href="#" className="logo">Chandan Swarnakar</a>
+        <a href="/" className="logo">Chandan Swarnakar</a>
         <nav className="navbar">
           {navItems.map((item, index) => (
             <NavLink

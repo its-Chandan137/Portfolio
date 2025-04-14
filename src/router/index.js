@@ -6,5 +6,7 @@ export { Footer } from "../components/common/Footer/Footer";
 
 export { default as ProjectPage } from "../screen/Projects/ProjectPage";
 
+export { Contact } from "../screen/Contact/Contact";
+
 export { default as Layout } from "../components/common/Layout";
 

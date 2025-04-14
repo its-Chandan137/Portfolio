@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home, Layout, ProjectPage} from "./router";
+import { Contact, Home, Layout, ProjectPage} from "./router";
 
 
 
@@ -10,6 +10,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/projects" element={<Layout><ProjectPage/></Layout>} />
+        <Route path="/contact" element={<Layout><Contact/></Layout>} />
       </Routes>
     </BrowserRouter>
     </>

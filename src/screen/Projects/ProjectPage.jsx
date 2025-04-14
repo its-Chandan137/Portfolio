@@ -1,6 +1,7 @@
 import React from 'react';
 import ProjectCard from './ProjectCard';
 import './Projects.scss';
+
 import fileIcon from '../../../public/images/icons/files.svg';
 import projectImage from '../../../public/images/projectImage1.webp';
 
@@ -13,6 +14,9 @@ import vibhImage from '../../../public/images/Projects/Vibhu-Image.png';
 import internBoxLogo from '../../../public/images/logos/InternboxNewLogo.png';
 import internBoxImage from '../../../public/images/Projects/InternBoxImage.png';
 
+import smartHealthLogo from '../../../public/images/logos/SmartHealthLogo.png';
+import smartHealthImage from '../../../public/images/Projects/SmartHealthImage.png';
+
 
 
   
@@ -20,7 +24,7 @@ const projects = [
   { id: '01', title: 'Vibhu', logo: vibhuLogo, image: vibhImage },
   { id: '02', title: 'Amplify', logo: amplifyLogo, image: amplifyImage },
   { id: '03', title: 'InternBox', logo: internBoxLogo, image: internBoxImage },
-  { id: '04', title: 'Cube 2.0', logo: fileIcon, image: projectImage },
+  { id: '04', title: 'Smart Health', logo: smartHealthLogo, image: smartHealthImage },
 ];
 
 export default function ProjectPage() {
@@ -28,8 +32,8 @@ export default function ProjectPage() {
     <div className="container">
       <div className="project-page">
         <div className="project-page-card-container">
-          {projects.map(project => (
-            <ProjectCard key={project.id} {...project} />
+          {projects.map((project, index) => (
+            <ProjectCard className="each-card" index={index} key={project.id} {...project} />
           ))}
           <div className="card-container-background">
             <div className="card-section-background"></div>

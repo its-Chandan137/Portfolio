@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import './Projects.scss';
 import ProjectPopup from './ProjectPopup';
 
-const ProjectCard = ({ id, title, logo, image }) => {
+const ProjectCard = ({ id, title, logo, image, className, index }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   return (
     <div 
-      className="card"
+      className={`card ${className}`}
       onClick={() => setIsPopupOpen(true)}
+      style={{ '--delay-index-project': index }}
     >
         <div className='outer-card-display'>
           <img src={logo} alt={`${title} logo`} className="logo" />
