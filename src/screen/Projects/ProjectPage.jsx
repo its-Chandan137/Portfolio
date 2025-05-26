@@ -28,6 +28,17 @@ const projects = [
 ];
 
 export default function ProjectPage() {
+
+  var mergeAlternately = function(word1, word2) {
+    let temp = "";
+        for(let i; i>word1.length; i++){
+            temp = word1[i]+word2[i]
+        }
+    return temp;
+};
+
+
+console.log(mergeAlternately("abc", "vvv"))
   return (
     <div className="container">
       <div className="project-page">

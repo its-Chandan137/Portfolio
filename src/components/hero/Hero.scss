@@ -10,9 +10,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-top: 60px;
         width: 100%;
-        height: 100vh;
+        // height: 100vh;
     
         h1{
             opacity: 0;
@@ -56,6 +55,7 @@
             position: absolute;
             top: 0;
             left: 0;
+            padding-top: 80px;
         }
     
         .hero_image_box{
@@ -64,6 +64,7 @@
             right: 0;
             display: flex;
             align-items: center;
+            padding-top: 80px;
     
             width: 550px;
             // margin-top: 60px;

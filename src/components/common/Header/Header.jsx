@@ -5,7 +5,7 @@ import './Header.scss';
 export const Header = () => {
   const navItems = [
     { to: '/', label: 'Home' },
-    { to: '/about', label: 'About', disabled: true }, // Disabled link
+    { to: '/about', label: 'About' }, // Disabled link
     { to: '/projects', label: 'Projects' },
     { to: '/contact', label: 'Contact'},
   ];

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Header } from '../router';
 import { Hero } from '../components/hero/Hero';
-import { About } from '../components/About/About';
+import { About } from './About/About';
 import  Toaster from '../components/common/Toaster/Toaster';
 // import { Hero } from '../router'
 
@@ -65,7 +65,6 @@ const handleKeyDown = (event) => {
       )}
       <Header/>
       <Hero/>
-      <About/>
     </div>
   )
 }
