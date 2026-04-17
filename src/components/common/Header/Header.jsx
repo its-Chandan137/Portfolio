@@ -1,8 +1,11 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import './Header.scss';
 
 export const Header = () => {
+  const location = useLocation();
+
+
   const navItems = [
     { to: '/', label: 'Home' },
     { to: '/about', label: 'About' }, // Disabled link
@@ -10,10 +13,18 @@ export const Header = () => {
     { to: '/contact', label: 'Contact'},
   ];
 
+  const navThere = (to) => {
+    if (location.pathname === to) {
+      console.warn("Already on this page");
+      return; 
+    }
+    window.location.href = to;
+  };
+
   return (
     <div className='container'>
       <div className="header">
-        <a href="/" className="logo">Chandan Swarnakar</a>
+        <a onClick={() => navThere('/')} className="logo">Chandan Swarnakar</a>
         <nav className="navbar">
           {navItems.map((item, index) => (
             <NavLink
