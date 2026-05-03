@@ -55,12 +55,13 @@ export const Hero = () => {
             <Title level={3} className={"Live_span_container"}>
               And I'm a <span></span>
             </Title>
-            <BodyOne>
+            <BodyOne className="w-[50%]">
               Frontend Developer with 1 year of experience in JavaScript, React,
               and modern web design,
               <br />
               skilled in creating responsive interfaces using CSS, SCSS,
-              Bootstrap, and Tailwind, while expanding expertise in
+              Bootstrap, and Tailwind, while expanding expertise in Angular and seeking opportunities to apply my expertise in Frontend Development, UI/UX Design, and modern web
+                    technologies.
               <br />
             </BodyOne>
 

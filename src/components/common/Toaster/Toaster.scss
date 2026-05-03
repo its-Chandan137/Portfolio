@@ -1,5 +1,8 @@
 @import '../../../color.scss';
 
+/* RESPONSIVE CHANGE: added toaster breakpoints so alerts remain visible on mobile */
+$mobile: 767px;
+
 .Toaster {
     position: fixed;
     top: 80px;
@@ -15,6 +18,22 @@
     .toaster_message {
         font-size: 14px;
         padding-right: 10px;
+    }
+}
+
+/* RESPONSIVE CHANGE: constrain the toaster within the viewport on mobile */
+@media (max-width: $mobile) {
+    .Toaster {
+        top: 88px;
+        right: 14px;
+        left: 14px;
+        min-width: 0;
+        max-width: none;
+        width: auto;
+
+        .toaster_message {
+            font-size: 13px;
+        }
     }
 }
 

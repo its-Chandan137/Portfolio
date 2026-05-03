@@ -1,7 +1,7 @@
 import React from 'react'
 import './About.scss'
 import { Button } from "react-bootstrap";
-import { BodyOne, Title } from "../common/CustomeComponents";
+import { BodyOne, Title } from "../../components/common/CustomeComponents";
 import aboutImage from "../../assets/images/Me_png.png";
 
 export const About = () => {

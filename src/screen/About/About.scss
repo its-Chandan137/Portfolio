@@ -1,0 +1,98 @@
+@import '../../color.scss';
+
+/* RESPONSIVE CHANGE: added About section breakpoints for tablet/mobile stacking */
+$tablet: 991px;
+$mobile: 767px;
+
+.about_Section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    background: $second-bg-color;
+
+    width: 100%;
+
+
+
+.about_img{
+    z-index: 200;
+
+}
+
+.about_img {
+    // width: 550px !important;
+    img{
+        width: 90%;
+    }
+}
+
+.about_content{
+
+    .heading{
+        text-align: left;
+        font-size: 4.5rem;
+        line-height: 1.2;
+
+        span{
+            color: $main-color;
+        }
+    }
+
+    h3{
+        font-size: 2.6rem;
+    }
+
+    p{
+        font-size: 1.6rem;
+        margin: 2rem 0 3rem;
+        line-height: unset;
+    }
+}
+}
+
+/* RESPONSIVE CHANGE: stack the About image/content on tablet widths */
+@media (max-width: $tablet) {
+    .about_Section{
+        flex-direction: column;
+        gap: 3rem;
+        text-align: center;
+
+        .about_img {
+            display: flex;
+            justify-content: center;
+
+            img{
+                width: min(100%, 420px);
+            }
+        }
+
+        .about_content{
+            .heading{
+                text-align: center;
+            }
+        }
+    }
+}
+
+/* RESPONSIVE CHANGE: tighten About spacing and type on mobile */
+@media (max-width: $mobile) {
+    .about_Section{
+        gap: 2.4rem;
+
+        .about_content{
+            .heading{
+                font-size: 3.6rem;
+            }
+
+            h3{
+                font-size: 2.2rem;
+            }
+
+            p{
+                font-size: 1.5rem;
+                margin: 1.6rem 0 2.4rem;
+            }
+        }
+    }
+}
