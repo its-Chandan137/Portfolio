@@ -1,3 +1,6 @@
+$tablet: 991px;
+$mobile: 767px;
+
 .footer {
     background: #1a2333;
     color: #a3bffa;
@@ -86,5 +89,42 @@
     margin-top: 20px;
     color: #a3bffa;
     font-size: 12px;
+  }
+
+  /* RESPONSIVE CHANGE: center footer columns on tablet while preserving the same design */
+  @media (max-width: $tablet) {
+    .footer-content {
+      justify-content: center;
+    }
+
+    .footer-section {
+      min-width: 260px;
+    }
+  }
+
+  /* RESPONSIVE CHANGE: stack footer content and center alignment on mobile */
+  @media (max-width: $mobile) {
+    padding: 32px 0;
+
+    .container {
+      padding: 0 14px;
+    }
+
+    .footer-content {
+      gap: 24px;
+    }
+
+    .footer-section {
+      min-width: 100%;
+      text-align: center;
+    }
+
+    .social-links {
+      justify-content: center;
+    }
+
+    .footer-section h3 {
+      font-size: 18px;
+    }
   }
 }

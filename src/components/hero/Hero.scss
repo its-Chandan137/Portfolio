@@ -1,5 +1,9 @@
 @import '../../color.scss';
 
+/* RESPONSIVE CHANGE: added hero-only breakpoints so desktop styling stays untouched */
+$tablet: 991px;
+$mobile: 767px;
+
 .hero-page{
 
     .social_icon{
@@ -144,6 +148,97 @@
                 box-shadow: 0 0 1rem $main-color;
             }
     
+        }
+    }
+}
+
+/* RESPONSIVE CHANGE: reflow the hero layout on tablet while preserving the desktop look */
+@media (max-width: $tablet) {
+    .hero-page{
+        .hero_section{
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4rem;
+            min-height: auto;
+            padding-top: 10rem !important;
+
+            .hero-content,
+            .hero_image_box{
+                position: relative;
+                top: auto;
+                left: auto;
+                right: auto;
+                min-height: auto;
+                padding: 0;
+            }
+
+            .hero-content{
+                width: 100%;
+                order: 2;
+            }
+
+            .hero_image_box{
+                order: 1;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero_image{
+                width: 100%;
+                max-width: 420px;
+            }
+        }
+
+        .hero-content{
+            p{
+                width: 100% !important;
+                max-width: 72rem;
+            }
+        }
+    }
+}
+
+/* RESPONSIVE CHANGE: center and scale the hero for mobile without changing animations or desktop visuals */
+@media (max-width: $mobile) {
+    .hero-page{
+        .hero_section{
+            align-items: center;
+            gap: 3rem;
+            padding-top: 14rem !important;
+
+            .hero-content{
+                align-items: center;
+                text-align: center !important;
+            }
+
+            .hero_image{
+                max-width: 300px;
+            }
+        }
+
+        .Live_span_container{
+            min-width: auto;
+            width: 100%;
+        }
+
+        .hero-content{
+            p{
+                width: 100% !important;
+                max-width: 100%;
+            }
+        }
+
+        .social-media{
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.6rem;
+            height: auto;
+            min-height: 8rem;
+        }
+
+        .download-resume-btn{
+            width: 100%;
+            max-width: 24rem;
         }
     }
 }

@@ -1,6 +1,11 @@
 @import './color.scss';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
+/* RESPONSIVE CHANGE: added shared tablet/mobile breakpoints for layout-only updates */
+$desktop-lg: 1399px;
+$tablet: 991px;
+$mobile: 767px;
+
 /* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"); */
 * {
   margin: 0;
@@ -31,6 +36,7 @@ body {
 
 .container{
   width: 1270px !important;
+  max-width: 1270px;
   margin-left: auto !important;
   margin-right: auto !important;
   position: relative !important;
@@ -69,4 +75,42 @@ body {
 // TEXT FONTS //
 .text-primary, .text-primary-gray{
   color: $text-color;
+}
+
+/* RESPONSIVE CHANGE: keep the desktop container intact while preventing overflow below large screens */
+@media (max-width: $desktop-lg) {
+  .container {
+    width: calc(100% - 48px) !important;
+  }
+}
+
+/* RESPONSIVE CHANGE: reduce shared spacing for tablet layouts */
+@media (max-width: $tablet) {
+  .section{
+    padding: 2rem 4% 2rem;
+  }
+
+  .container {
+    width: calc(100% - 40px) !important;
+  }
+
+  .main-content {
+    margin-top: 72px;
+  }
+}
+
+/* RESPONSIVE CHANGE: tighten the global layout for mobile screens only */
+@media (max-width: $mobile) {
+  .section{
+    padding: 2rem 1.8rem 2rem;
+  }
+
+  .container {
+    width: calc(100% - 28px) !important;
+  }
+
+  .main-content {
+    margin-top: 116px;
+    min-height: calc(100vh - 220px);
+  }
 }

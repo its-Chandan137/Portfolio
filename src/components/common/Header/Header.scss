@@ -1,5 +1,9 @@
 @import '../../../color.scss';
 
+/* RESPONSIVE CHANGE: added header-only breakpoints so desktop nav styling stays unchanged */
+$tablet: 991px;
+$mobile: 767px;
+
 .header{
     z-index: 900;
     display: flex;
@@ -55,6 +59,56 @@
     animation-delay: calc(0.2s * var(--delay-index)); // Use custom property
   }
 
+}
+
+/* RESPONSIVE CHANGE: reduce nav spacing on tablet without touching Header.jsx logic */
+@media (max-width: $tablet) {
+  .header{
+    padding: 1.8rem 0;
+
+    .logo{
+      font-size: 2.2rem;
+    }
+
+    .navbar{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-wrap: wrap;
+      row-gap: 1rem;
+
+      .nav-item{
+        margin-left: 2.4rem;
+        font-size: 1.55rem;
+      }
+    }
+  }
+}
+
+/* RESPONSIVE CHANGE: let the fixed header wrap cleanly on mobile */
+@media (max-width: $mobile) {
+  .header{
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.4rem;
+    padding: 1.6rem 0;
+
+    .logo{
+      font-size: 2rem;
+      line-height: 1.2;
+    }
+
+    .navbar{
+      width: 100%;
+      justify-content: flex-start;
+      gap: 1rem 1.8rem;
+
+      .nav-item{
+        margin-left: 0;
+        font-size: 1.5rem;
+      }
+    }
+  }
 }
 
   
